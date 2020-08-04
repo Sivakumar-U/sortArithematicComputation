@@ -36,3 +36,23 @@ do
 done
 
 echo "Array of values from the dictionary: "${array[@]}
+
+for ((i = 0; i<5; i++))
+do
+
+    for((j = 0; j<5-i-1; j++))
+    do
+
+        if [ ${array[j]} -lt ${array[$((j+1))]} ]
+        then
+            # swap
+            temp=${array[j]}
+            array[$j]=${array[$((j+1))]}
+            array[$((j+1))]=$temp
+        fi
+    done
+done
+
+echo "Array sorted in descending order : "
+
+echo ${array[*]}
