@@ -9,3 +9,6 @@ echo "a+b*c="$result
 
 result2=`awk "BEGIN {print ($a * $b) + $c}"`
 echo "a*b+c="$result2
+
+result3=`awk "BEGIN {print $c + ($a / $b)}"`
+echo "c+a/b="$result3
