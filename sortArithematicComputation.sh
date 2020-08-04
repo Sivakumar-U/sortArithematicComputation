@@ -1,6 +1,7 @@
 #!/bin/bash -x
 
 declare -A resultInDict
+counter=0
 
 read -p "Enter the value of a: " a
 read -p "Enter the value of b: " b
@@ -28,3 +29,10 @@ for i in "${!resultInDict[@]}"
 do
 	echo "$i=${resultInDict[$i]}"
 done
+
+for i in "${resultInDict[@]}"
+do
+	array[((counter++))]=$i
+done
+
+echo "Array of values from the dictionary: "${array[@]}
