@@ -43,7 +43,7 @@ do
     for((j = 0; j<5-i-1; j++))
     do
 
-        if [ ${array[j]} -lt ${array[$((j+1))]} ]
+        if [ ${array[j]} -gt ${array[$((j+1))]} ]
         then
             # swap
             temp=${array[j]}
@@ -53,6 +53,6 @@ do
     done
 done
 
-echo "Array sorted in descending order : "
+echo "Array sorted in Ascending order : "
 
 echo ${array[*]}
